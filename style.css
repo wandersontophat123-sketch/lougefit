@@ -1,0 +1,1169 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0602ec;
+    color: #ffffff;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #222;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #0151fd;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #0400f3;
+}
+
+
+/* =====================================
+   BOTÕES
+===================================== */
+
+.btn-primary,
+.btn-secondary,
+.btn-menu {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #0d09e5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #030350;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: black;
+}
+
+.btn-menu {
+    background: #001aff;
+    color: white;
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    padding: 120px 8% 80px;
+
+    /* A primeira camada faz o fim do hero virar azul (transição) */
+    background:
+        linear-gradient(
+            180deg,
+            transparent 70%,
+            #0602ec 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(10, 2, 90, 0.95),
+            rgba(37, 38, 104, 0.5),
+            rgba(145, 143, 150, 0.8)
+        ),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+.hero-subtitle,
+.section-subtitle {
+    color: #0151fd;
+
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 120px);
+
+    line-height: 0.9;
+
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #0151fd;
+}
+
+.hero-text {
+    margin-top: 30px;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    color: #cccccc;
+
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+/* =====================================
+   VÍDEO DO HERO
+===================================== */
+
+.hero-video {
+    width: 100%;
+    max-width: 450px;
+
+    flex-shrink: 0;
+
+    position: relative;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 500px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 30px rgba(1, 81, 253, 0.35);
+
+    border: 1px solid rgba(1, 81, 253, 0.4);
+}
+
+
+/* =====================================
+   SOBRE
+===================================== */
+
+.sobre {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 120px 20px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.sobre-img {
+    height: 550px;
+}
+
+.img-placeholder {
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(245, 244, 247, 0.15),
+            rgba(0, 3, 10, 0.288)
+        ),
+        url(imagens/jamilly.jpg);
+
+    background-size: cover;
+    background-position: center;
+
+    font-size: 50px;
+    font-weight: 900;
+
+    /* Bordas se dissolvendo */
+    -webkit-mask-image:(
+        ellipse closest-side at center,
+        #000 40%,
+        rgba(0, 0, 0, 0.6) 50%,
+        transparent 50%
+    );
+
+    mask-image: radial-gradient(
+        ellipse closest-side at center,
+        #000 40%,
+        rgba(0, 0, 0, 0.6) 70%,
+        transparent 100%
+    );
+}
+
+.sobre-content h2,
+.section-header h2,
+.contato h2 {
+    font-size: 45px;
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+.sobre-content p {
+    color: #aaa;
+
+    line-height: 2.0;
+
+    margin-bottom: 20px;
+}
+
+.numbers {
+    display: flex;
+
+    gap: 50px;
+
+    margin-top: 35px;
+}
+
+.numbers div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.numbers strong {
+    font-size: 32px;
+
+    color: #f0f1f3;
+}
+
+.numbers span {
+    color: #aaa;
+}
+
+
+/* =====================================
+   MODALIDADES
+===================================== */
+
+.modalidades {
+    padding: 120px 20px;
+
+    background: linear-gradient(
+        180deg,
+        #080808 0%,
+        #111 20%,
+        #111 80%,
+        #0602ec 100%
+    );
+}
+
+.section-header {
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.section-header > p:last-child {
+    color: #999;
+
+    margin-top: 10px;
+}
+
+.cards {
+    max-width: 1200px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+    background: #181818;
+
+    padding: 40px 30px;
+
+    border: 1px solid #252525;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: #0151fd;
+}
+
+.card-icon {
+    font-size: 45px;
+
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #999;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   BENEFÍCIOS
+===================================== */
+
+.beneficios {
+    padding: 120px 20px;
+}
+
+.beneficios-grid {
+    max-width: 1200px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1px;
+
+    background: #333;
+}
+
+.beneficio {
+    background: #0b0b0b;
+
+    padding: 45px;
+}
+
+.beneficio span {
+    color: #0151fd;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.beneficio h3 {
+    font-size: 25px;
+
+    margin: 15px 0;
+}
+
+.beneficio p {
+    color: #999;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   FRASE
+===================================== */
+
+.frase {
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    /* A primeira camada cria a transição do topo (azul) e da base (#111) */
+    background:
+        linear-gradient(
+            180deg,
+            #0602ec 0%,
+            transparent 25%,
+            transparent 75%,
+            #111 100%
+        ),
+        linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.85)
+        ),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.frase h2 {
+    font-size: clamp(40px, 6vw, 75px);
+
+    line-height: 1;
+}
+
+.frase span {
+    color: #1809e5;
+}
+
+.frase p {
+    margin-top: 25px;
+
+    color: #faf8f8;
+
+    font-size: 18px;
+}
+
+
+/* =====================================
+   PLANOS
+===================================== */
+
+.planos {
+    padding: 120px 20px;
+
+    background: linear-gradient(
+        180deg,
+        #111 0%,
+        #111 80%,
+        #0602ec 100%
+    );
+}
+
+.planos-container {
+    max-width: 1300px;
+
+    margin: 60px auto 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.plano {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    /* 3 por linha: (100% - gap x 2) / 3  ->  gap 30px = 60px */
+    width: calc((100% - 60px) / 3);
+
+    background: #181818;
+
+    padding: 40px 30px;
+
+    border: 1px solid #292929;
+}
+
+.plano.destaque {
+    border: 4px solid #0d09e5;
+}
+
+/* Botão sempre no fim do card (todos alinhados) */
+.plano .btn-primary {
+    margin-top: auto;
+
+    text-align: center;
+}
+
+.popular {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    background: #031aee;
+
+    padding: 8px 15px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.plano h3 {
+    font-size: 20px;
+
+    margin-bottom: 20px;
+}
+
+.preco {
+    font-size: 45px;
+
+    font-weight: bold;
+
+    margin-bottom: 30px;
+}
+
+.preco small {
+    font-size: 20px;
+}
+
+.preco span {
+    font-size: 14px;
+
+    color: #0a1af5;
+}
+
+.plano ul {
+    list-style: none;
+
+    margin-bottom: 30px;
+}
+
+.plano li {
+    color: #aaa;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+/* =====================================
+   CTA
+===================================== */
+
+.cta {
+    padding: 120px 20px;
+
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: clamp(35px, 6vw, 65px);
+
+    line-height: 1;
+}
+
+.cta h2 span {
+    color: #0151fd;
+}
+
+.cta p {
+    color: #999;
+
+    margin: 25px 0;
+}
+
+
+/* =====================================
+   CONTATO
+===================================== */
+
+.contato {
+    padding: 120px 20px;
+
+    background: linear-gradient(
+        180deg,
+        #0602ec 0%,
+        #111 20%,
+        #111 80%,
+        #0602ec 100%
+    );
+}
+
+.contato-content {
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.contato-content > p {
+    color: #999;
+
+    line-height: 1.6;
+}
+
+.contato-info {
+    margin: 35px 0;
+}
+
+.contato-info p {
+    color: #ccc;
+
+    margin: 10px 0;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+footer p {
+    color: #fdfcfc;
+
+    margin-top: 10px;
+}
+
+
+/* =====================================
+   ANIMAÇÕES DE ENTRADA
+===================================== */
+
+.animar {
+    opacity: 0;
+
+    transform: translateY(60px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.animar.mostrar {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================
+   ENTRADA PELA ESQUERDA
+===================================== */
+
+.animar-esquerda {
+    opacity: 0;
+
+    transform: translateX(-80px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.animar-esquerda.mostrar {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =====================================
+   ENTRADA PELA DIREITA
+===================================== */
+
+.animar-direita {
+    opacity: 0;
+
+    transform: translateX(80px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.animar-direita.mostrar {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =====================================
+   ENTRADA COM ZOOM
+===================================== */
+
+.animar-zoom {
+    opacity: 0;
+
+    transform: scale(0.85);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.animar-zoom.mostrar {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =====================================
+   RESPONSIVO
+===================================== */
+
+@media (max-width: 800px) {
+
+    /* HEADER */
+
+    .menu {
+        display: none;
+    }
+
+    .btn-menu {
+        display: none;
+    }
+
+
+    /* SOBRE */
+
+    .sobre {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-img {
+        height: 350px;
+    }
+
+
+    /* MODALIDADES */
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* BENEFÍCIOS */
+
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* PLANOS */
+
+    .plano {
+        width: 100%;
+    }
+
+
+    /* NÚMEROS */
+
+    .numbers {
+        gap: 25px;
+    }
+
+    .numbers strong {
+        font-size: 25px;
+    }
+
+
+    /* TÍTULOS */
+
+    .sobre-content h2,
+    .section-header h2,
+    .contato h2 {
+        font-size: 35px;
+    }
+
+}
+
+
+/* =====================================
+   EQUIPE
+===================================== */
+
+.equipe {
+    padding: 120px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0602ec 0%,
+            #080808 20%,
+            #080808 100%
+        );
+}
+
+
+/* PROFISSIONAIS */
+
+.equipe-container {
+    max-width: 1100px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.profissional {
+    text-align: center;
+}
+
+.profissional-img {
+    width: 100%;
+    height: 420px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+
+    background: #151515;
+
+    border: 1px solid #222;
+
+    box-shadow:
+        0 0 25px rgba(1, 81, 253, 0.12);
+}
+
+.profissional-img img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s;
+}
+
+.profissional:hover .profissional-img img {
+    transform: scale(1.05);
+}
+
+.profissional h3 {
+    font-size: 22px;
+
+    margin-bottom: 8px;
+}
+
+.profissional span {
+    color: #0151fd;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================
+   CONVITE DA EQUIPE
+===================================== */
+
+.equipe-convite {
+    max-width: 1200px;
+
+    margin: 100px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.equipe-convite-img {
+    width: 100%;
+    height: 570px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 40px rgba(8, 81, 240, 0.18);
+}
+
+.equipe-convite-img img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s;
+}
+
+.equipe-convite-img:hover img {
+    transform: scale(1.03);
+}
+
+.equipe-convite-content h2 {
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 0.95;
+
+    margin-bottom: 25px;
+}
+
+.equipe-convite-content p:not(.section-subtitle) {
+    color: #aaa;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+    max-width: 500px;
+}
+
+
+/* =====================================
+   BOTÃO WHATSAPP
+===================================== */
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 16px 28px;
+
+    background: #25D366;
+    color: #ffffff;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+
+    border-radius: 8px;
+
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp span {
+    font-size: 22px;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+
+    background: #20bd5a;
+
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.40);
+}
+
+.btn-whatsapp:active {
+    transform: translateY(0);
+}
+/* =====================================
+   BOTÃO INSTAGRAM
+===================================== */
+
+.btn-instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 28px;
+
+    background: #e1306c;
+    color: #ffffff;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-instagram:hover {
+    transform: translateY(-3px);
+
+    background: #c92a5f;
+}
+
+/* =====================================
+   RASTRO DO MOUSE
+===================================== */
+
+.cursor-glow {
+    position: fixed;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #0151fd;
+
+    box-shadow:
+        0 0 10px #0151fd,
+        0 0 25px #0151fd,
+        0 0 45px rgba(1, 81, 253, 0.6);
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+
+    transition:
+        width 0.15s ease,
+        height 0.15s ease,
+        opacity 0.3s ease;
+}
+/* =====================================
+   VÍDEO DE FUNDO DO HERO
+===================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+/* Camada escura para o texto continuar legível */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 70%,
+            #0602ec 100%
+        ),
+        linear-gradient(
+            1000deg,
+            rgba(10, 2, 90, 0.9),
+            rgba(10, 2, 90, 0.5),
+            rgba(0, 0, 0, 0.3)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+.btn-whatsapp img,
+.btn-instagram img {
+    width: 40px;
+    height: 40px;
+
+    object-fit: contain;
+}
